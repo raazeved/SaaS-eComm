@@ -3,9 +3,13 @@ package tech.ada.eCommSolidario.model;
 import jakarta.persistence.*;
 
 @Entity
-public class BeneficiariosFísicos {
+public class BeneficiarioPF {
 
-    private int idBeneficiario;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "idBeneficiarioPF", nullable = false)
+    private Long idBeneficiarioPF;
+
     private String nome;
     private int idade;
     private String genero;
@@ -15,14 +19,14 @@ public class BeneficiariosFísicos {
     private String historia;
 
     // Construtor
-    public BeneficiarioFisico(int idBeneficiario, String nome,
+    public BeneficiarioPF(Long idBeneficiarioPF, String nome,
                               int idade,
                               String genero,
                               String situacaoFamiliar,
                               String endereco,
                               String necessidades,
                               String historia) {
-        this.idBeneficiario = idBeneficiario;
+        this.idBeneficiarioPF = idBeneficiarioPF;
         this.nome = nome;
         this.idade = idade;
         this.genero = genero;
@@ -33,12 +37,12 @@ public class BeneficiariosFísicos {
     }
 
     // Getters e Setters
-    public int getIdBeneficiario() {
-        return idBeneficiario;
+    public Long getIdBeneficiario() {
+        return idBeneficiarioPF;
     }
 
-    public void setIdBeneficiario(int idBeneficiario) {
-        this.idBeneficiario = idBeneficiario;
+    public void setIdBeneficiario(Long idBeneficiario) {
+        this.idBeneficiarioPF = idBeneficiarioPF;
     }
 
     public String getNome() {
@@ -100,7 +104,7 @@ public class BeneficiariosFísicos {
     @Override
     public String toString() {
         return "BeneficiarioFisico{" +
-                "idBeneficiario=" + idBeneficiario +
+                "idBeneficiario=" + idBeneficiarioPF +
                 ", nome='" + nome + '\'' +
                 ", idade=" + idade +
                 ", genero='" + genero + '\'' +

@@ -23,7 +23,8 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/v1/usuarios").permitAll() // Permite acesso público para criar usuários
-                        .anyRequest().authenticated() // Exige autenticação para outros endpoints
+                        .requestMatchers("/api/v1/**").authenticated() // Permite acesso público para criar usuários
+                        .anyRequest().permitAll() // Exige autenticação para outros endpoints
                 )
                 .httpBasic();  // Habilita a autenticação básica
 

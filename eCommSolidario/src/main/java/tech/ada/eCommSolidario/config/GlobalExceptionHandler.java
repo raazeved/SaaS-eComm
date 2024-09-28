@@ -31,18 +31,4 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(JdbcSQLIntegrityConstraintViolationException.class)
-    public ResponseEntity<String> handleUniqueIndex(JdbcSQLIntegrityConstraintViolationException error) {
-        return new ResponseEntity<>("Erro ao criar usuario pois CPF já existe", HttpStatus.BAD_REQUEST);
-    }
-
-    @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
-    public ResponseEntity<String> handleUniqueIndexGenerico(JdbcSQLIntegrityConstraintViolationException error) {
-        return new ResponseEntity<>("Erro ao criar entidade que já existe no banco.", HttpStatus.BAD_REQUEST);
-    }
-
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handleUniqueIndexGenerico(Exception error) {
-        return new ResponseEntity<>("Você deve ter feito algo errado!.", HttpStatus.BAD_REQUEST);
-    }
 }

@@ -4,8 +4,13 @@ import java.time.LocalDate;
 import jakarta.persistence.*;
 
 @Entity
-public class Campanhas {
-    private int idCampanha;
+public class Campanha {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "idCampanha", nullable = false)
+    private Long idCampanha;
+
     private String nome;
     private LocalDate dataInicio;
     private LocalDate dataTermino;
@@ -14,7 +19,7 @@ public class Campanhas {
     private String status;
 
     // Construtor
-    public Campanha(int idCampanha, String nome, LocalDate dataInicio, LocalDate dataTermino, String descricao, String objetivo, String status) {
+    public Campanha(Long idCampanha, String nome, LocalDate dataInicio, LocalDate dataTermino, String descricao, String objetivo, String status) {
         this.idCampanha = idCampanha;
         this.nome = nome;
         this.dataInicio = dataInicio;
@@ -25,11 +30,11 @@ public class Campanhas {
     }
 
     // Getters e Setters
-    public int getIdCampanha() {
+    public Long getIdCampanha() {
         return idCampanha;
     }
 
-    public void setIdCampanha(int idCampanha) {
+    public void setIdCampanha(Long idCampanha) {
         this.idCampanha = idCampanha;
     }
 

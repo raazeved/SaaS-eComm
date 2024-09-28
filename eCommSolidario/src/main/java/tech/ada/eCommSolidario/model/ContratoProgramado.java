@@ -5,8 +5,10 @@ import jakarta.persistence.*;
 
 @Entity
 
-public class ContratosProgramados {
+public class ContratoProgramado {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 
     private int idContrato;
     private int idBenfeitor;

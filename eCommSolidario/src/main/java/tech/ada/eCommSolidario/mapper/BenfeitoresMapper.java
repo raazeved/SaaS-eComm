@@ -3,7 +3,7 @@ package tech.ada.eCommSolidario.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 import tech.ada.eCommSolidario.dto.BenfeitoresDTO;
-import tech.ada.eCommSolidario.model.Benfeitores;
+import tech.ada.eCommSolidario.model.Benfeitor;
 
 @Mapper(componentModel = "spring")
 public interface BenfeitoresMapper {
@@ -11,8 +11,8 @@ public interface BenfeitoresMapper {
 
     BenfeitoresMapper INSTANCE = Mappers.getMapper(BenfeitoresMapper.class);
 
-    BenfeitoresDTO toDto(Benfeitores benfeitores);
+    BenfeitoresDTO toDto(Benfeitor benfeitores);
 
-    Benfeitores toEntity(BenfeitoresDTO benfeitoresDTO);
+    Benfeitor toEntity(BenfeitoresDTO benfeitoresDTO);
 
 }

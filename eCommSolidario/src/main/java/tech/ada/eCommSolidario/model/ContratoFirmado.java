@@ -1,59 +1,61 @@
 package tech.ada.eCommSolidario.model;
+
 import java.time.LocalDate;
 import jakarta.persistence.*;
 
 @Entity
-public class ContratosEspecificos {
-    private int idContratoEspecifico;
+public class ContratoFirmado {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
+    private int idContratoFirmado;
     private int idBenfeitor;
     private Integer idBeneficiarioFisico; // Opcional
     private Integer idBeneficiarioJuridico; // Opcional
     private int idEstabelecimento;
     private int idCampanha;
-    private int idDoacao;
     private LocalDate dataInicio;
     private LocalDate dataTermino;
-    private LocalDate dataRepactuacao;
+    private LocalDate dataRecompactuacao;
     private double valorContrato;
     private String status;
     private String observacoes;
 
     // Construtor
-    public ContratosEspecificos(int idContratoEspecifico,
-                                int idBenfeitor,
-                                Integer idBeneficiarioFisico,
-                                Integer idBeneficiarioJuridico,
-                                int idEstabelecimento,
-                                int idCampanha,
-                                int idDoacao,
-                                LocalDate dataInicio,
-                                LocalDate dataTermino,
-                                LocalDate dataRepactuacao,
-                                double valorContrato,
-                                String status,
-                                String observacoes) {
-        this.idContratoEspecifico = idContratoEspecifico;
+    public ContratoFirmado(int idContratoFirmado,
+                           int idBenfeitor,
+                           Integer idBeneficiarioFisico,
+                           Integer idBeneficiarioJuridico,
+                           int idEstabelecimento,
+                           int idCampanha,
+                           LocalDate dataInicio,
+                           LocalDate dataTermino,
+                           LocalDate dataRecompactuacao,
+                           double valorContrato,
+                           String status,
+                           String observacoes) {
+        this.idContratoFirmado = idContratoFirmado;
         this.idBenfeitor = idBenfeitor;
         this.idBeneficiarioFisico = idBeneficiarioFisico;
         this.idBeneficiarioJuridico = idBeneficiarioJuridico;
         this.idEstabelecimento = idEstabelecimento;
         this.idCampanha = idCampanha;
-        this.idDoacao = idDoacao;
         this.dataInicio = dataInicio;
         this.dataTermino = dataTermino;
-        this.dataRepactuacao = dataRepactuacao;
+        this.dataRecompactuacao = dataRecompactuacao;
         this.valorContrato = valorContrato;
         this.status = status;
         this.observacoes = observacoes;
     }
 
     // Getters e Setters
-    public int getIdContratoEspecifico() {
-        return idContratoEspecifico;
+    public int getIdContratoFirmado() {
+        return idContratoFirmado;
     }
 
-    public void setIdContratoEspecifico(int idContratoEspecifico) {
-        this.idContratoEspecifico = idContratoEspecifico;
+    public void setIdContratoFirmado(int idContratoFirmado) {
+        this.idContratoFirmado = idContratoFirmado;
     }
 
     public int getIdBenfeitor() {
@@ -96,14 +98,6 @@ public class ContratosEspecificos {
         this.idCampanha = idCampanha;
     }
 
-    public int getIdDoacao() {
-        return idDoacao;
-    }
-
-    public void setIdDoacao(int idDoacao) {
-        this.idDoacao = idDoacao;
-    }
-
     public LocalDate getDataInicio() {
         return dataInicio;
     }
@@ -120,12 +114,12 @@ public class ContratosEspecificos {
         this.dataTermino = dataTermino;
     }
 
-    public LocalDate getDataRepactuacao() {
-        return dataRepactuacao;
+    public LocalDate getDataRecompactuacao() {
+        return dataRecompactuacao;
     }
 
-    public void setDataRepactuacao(LocalDate dataRepactuacao) {
-        this.dataRepactuacao = dataRepactuacao;
+    public void setDataRecompactuacao(LocalDate dataRecompactuacao) {
+        this.dataRecompactuacao = dataRecompactuacao;
     }
 
     public double getValorContrato() {
@@ -154,17 +148,16 @@ public class ContratosEspecificos {
 
     @Override
     public String toString() {
-        return "ContratoEspecifico{" +
-                "idContratoEspecifico=" + idContratoEspecifico +
+        return "ContratoFirmado{" +
+                "idContratoFirmado=" + idContratoFirmado +
                 ", idBenfeitor=" + idBenfeitor +
                 ", idBeneficiarioFisico=" + idBeneficiarioFisico +
                 ", idBeneficiarioJuridico=" + idBeneficiarioJuridico +
                 ", idEstabelecimento=" + idEstabelecimento +
                 ", idCampanha=" + idCampanha +
-                ", idDoacao=" + idDoacao +
                 ", dataInicio=" + dataInicio +
                 ", dataTermino=" + dataTermino +
-                ", dataRepactuacao=" + dataRepactuacao +
+                ", dataRecompactuacao=" + dataRecompactuacao +
                 ", valorContrato=" + valorContrato +
                 ", status='" + status + '\'' +
                 ", observacoes='" + observacoes + '\'' +

@@ -3,7 +3,11 @@ package tech.ada.eCommSolidario.model;
 import jakarta.persistence.*;
 
 @Entity
-public class Estabelecimentos {
+public class Estabelecimento {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private int idEstabelecimento;
     private String nome;
     private String tipo;
@@ -98,5 +102,4 @@ public class Estabelecimentos {
                 ", historico='" + historico + '\'' +
                 '}';
     }
-}
 }

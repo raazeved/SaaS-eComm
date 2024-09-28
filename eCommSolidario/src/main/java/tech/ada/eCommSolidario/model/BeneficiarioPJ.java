@@ -2,15 +2,13 @@ package tech.ada.eCommSolidario.model;
 
 import jakarta.persistence.*;
 @Entity
-public class BeneficiariosJurídicos{
+public class BeneficiarioPJ {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "idBeneficiario", nullable = false)
-    private Long idBeneficiario;
+    @Column(name = "idBeneficiarioPJ", nullable = false)
+    private Long idBeneficiarioPJ;
 
-    @Column
-    private int idBeneficiario;
     private String nomeInstituicao;
     private String tipoBeneficio;
     private String endereco;
@@ -18,13 +16,13 @@ public class BeneficiariosJurídicos{
     private String historicoAjuda;
 
     // Construtor
-    public BeneficiarioJuridico(int idBeneficiario,
+    public BeneficiarioPJ(Long idBeneficiarioPJ,
                                 String nomeInstituicao,
                                 String tipoBeneficio,
                                 String endereco,
                                 String necessidades,
                                 String historicoAjuda) {
-        this.idBeneficiario = idBeneficiario;
+        this.idBeneficiarioPJ = idBeneficiarioPJ;
         this.nomeInstituicao = nomeInstituicao;
         this.tipoBeneficio = tipoBeneficio;
         this.endereco = endereco;
@@ -33,12 +31,12 @@ public class BeneficiariosJurídicos{
     }
 
     // Getters e Setters
-    public int getIdBeneficiario() {
-        return idBeneficiario;
+    public Long getIdBeneficiario() {
+        return idBeneficiarioPJ;
     }
 
-    public void setIdBeneficiario(int idBeneficiario) {
-        this.idBeneficiario = idBeneficiario;
+    public void setIdBeneficiario(Long idBeneficiarioPJ) {
+        this.idBeneficiarioPJ = idBeneficiarioPJ;
     }
 
     public String getNomeInstituicao() {
@@ -84,7 +82,7 @@ public class BeneficiariosJurídicos{
     @Override
     public String toString() {
         return "BeneficiarioJuridico{" +
-                "idBeneficiario=" + idBeneficiario +
+                "idBeneficiario=" + idBeneficiarioPJ +
                 ", nomeInstituicao='" + nomeInstituicao + '\'' +
                 ", tipoBeneficio='" + tipoBeneficio + '\'' +
                 ", endereco='" + endereco + '\'' +

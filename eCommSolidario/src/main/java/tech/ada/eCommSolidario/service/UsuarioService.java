@@ -4,9 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import tech.ada.eCommSolidario.model.Usuario;
-import tech.ada.eCommSolidario.repository.
-import tech.pinhos.financas.model.Usuario;
-import tech.pinhos.financas.repository.UsuarioRepository;
+import tech.ada.eCommSolidario.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {

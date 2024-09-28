@@ -3,15 +3,12 @@ package tech.ada.eCommSolidario.model;
 import jakarta.persistence.*;
 
 @Entity
-public class Benfeitores {
+public class Benfeitor {
 
-    @idBenfeitor
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "idBenfeitor", nullable = false)
     private Long idBenfeitor;
-
-    @Column
-    private int idBenfeitor;
 
     @Column
     private String nome;
@@ -38,6 +35,9 @@ public class Benfeitores {
     @Column
     private String telefone;
 
+    // Construtor
+    public Benfeitor() {
+    }
 
     // Construtor
     public Benfeitor(long idBenfeitor,
@@ -149,5 +149,4 @@ public class Benfeitores {
                 ", historia='" + historia + '\'' +
                 '}';
     }
-}
 }

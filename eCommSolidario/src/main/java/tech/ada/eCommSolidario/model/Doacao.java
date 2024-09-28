@@ -5,7 +5,10 @@ import jakarta.persistence.*;
 
 @Entity
 
-public class Doacoes {
+public class Doacao {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 
     private int idDoacao;
     private int idBenfeitor;
@@ -16,13 +19,13 @@ public class Doacoes {
     private String observacoes;
 
     // Construtor
-    public Doacoes(int idDoacao,
-                   int idBenfeitor,
-                   int idEstabelecimento,
-                   String tipoDoacao,
-                   int quantidade,
-                   LocalDate dataDoacao,
-                   String observacoes) {
+    public Doacao(int idDoacao,
+                  int idBenfeitor,
+                  int idEstabelecimento,
+                  String tipoDoacao,
+                  int quantidade,
+                  LocalDate dataDoacao,
+                  String observacoes) {
 
         this.idDoacao = idDoacao;
         this.idBenfeitor = idBenfeitor;
