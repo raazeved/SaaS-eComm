@@ -3,7 +3,7 @@ package tech.ada.eCommSolidario.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import tech.ada.eCommSolidario.model.Benfeitor;
+
 import tech.ada.eCommSolidario.model.Estabelecimento;
 
 import java.util.List;
