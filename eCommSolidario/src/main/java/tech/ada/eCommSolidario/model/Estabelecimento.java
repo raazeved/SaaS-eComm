@@ -7,17 +7,42 @@ public class Estabelecimento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "idEstabelecimento", nullable = false)
+    private Long idEstabelecimento;
 
-    private int idEstabelecimento;
+    @Column
     private String nome;
+
+    @Column
     private String tipo;
+
+    @Column
     private String endereco;
+
+    @Column
     private String contato;
+
+    @Column
     private String necessidades;
+
+    @Column
     private String historico;
 
+    @Column
+    private String uf;
+
+    @Column(unique = true, nullable = false)
+    private String cnpj;
+
+    @Column
+    private String email;
+
+    @Column
+    private String telefone;
+
+
     // Construtor
-    public Estabelecimento(int idEstabelecimento,
+    public Estabelecimento(Long idEstabelecimento,
                            String nome,
                            String tipo,
                            String endereco,
@@ -34,11 +59,11 @@ public class Estabelecimento {
     }
 
     // Getters e Setters
-    public int getIdEstabelecimento() {
+    public Long getIdEstabelecimento() {
         return idEstabelecimento;
     }
 
-    public void setIdEstabelecimento(int idEstabelecimento) {
+    public void setIdEstabelecimento(Long idEstabelecimento) {
         this.idEstabelecimento = idEstabelecimento;
     }
 
@@ -88,6 +113,31 @@ public class Estabelecimento {
 
     public void setHistorico(String historico) {
         this.historico = historico;
+    }
+
+
+    public String getcnpj() {
+        return cnpj;
+    }
+
+    public void setcnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     @Override

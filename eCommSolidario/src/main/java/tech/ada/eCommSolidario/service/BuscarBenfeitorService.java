@@ -3,8 +3,8 @@ package tech.ada.eCommSolidario.service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import tech.ada.eCommSolidario.dto.BenfeitoresDTO;
-import tech.ada.eCommSolidario.mapper.BenfeitoresMapper;
+import tech.ada.eCommSolidario.dto.BenfeitorDTO;
+import tech.ada.eCommSolidario.mapper.BenfeitorMapper;
 import tech.ada.eCommSolidario.repository.BenfeitorRepository;
 
 import java.util.List;
@@ -14,18 +14,18 @@ import java.util.Optional;
 public class BuscarBenfeitorService {
 
     private final BenfeitorRepository benfeitoresRepository;
-    private final BenfeitoresMapper benfeitoresMapper;
+    private final BenfeitorMapper benfeitoresMapper;
 
-    public BuscarBenfeitorService(BenfeitorRepository benfeitoresRepository, BenfeitoresMapper benfeitoresMapper) {
+    public BuscarBenfeitorService(BenfeitorRepository benfeitoresRepository, BenfeitorMapper benfeitoresMapper) {
         this.benfeitoresRepository = benfeitoresRepository;
         this.benfeitoresMapper = benfeitoresMapper;
     }
 
-    public Optional<BenfeitoresDTO> buscarBenfeitorCpf(String cpf) {
+    public Optional<BenfeitorDTO> buscarBenfeitorCpf(String cpf) {
         return benfeitoresRepository.findBenfeitorByCpf(cpf).map(benfeitoresMapper::toDto);
     }
 
-    public List<BenfeitoresDTO> buscarTodas() {
+    public List<BenfeitorDTO> buscarTodas() {
         return benfeitoresRepository
                 .findAll()
                 .stream()
@@ -33,13 +33,13 @@ public class BuscarBenfeitorService {
                 .toList();
     }
 
-    public Page<BenfeitoresDTO> buscarPaginada(Pageable pageable) {
+    public Page<BenfeitorDTO> buscarPaginada(Pageable pageable) {
         return benfeitoresRepository
                 .findAll(pageable)
                 .map(benfeitoresMapper::toDto);
     }
 
-    public List<BenfeitoresDTO> buscarPessoasPorUf(String cidade) {
+    public List<BenfeitorDTO> buscarPessoasPorUf(String cidade) {
         return benfeitoresRepository
                 .findByUf(cidade)
                 .stream()

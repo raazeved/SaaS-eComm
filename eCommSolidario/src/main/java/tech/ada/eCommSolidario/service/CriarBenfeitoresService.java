@@ -1,9 +1,9 @@
 package tech.ada.eCommSolidario.service;
 
 import org.springframework.stereotype.Service;
-import tech.ada.eCommSolidario.dto.BenfeitoresDTO;
+import tech.ada.eCommSolidario.dto.BenfeitorDTO;
 import tech.ada.eCommSolidario.dto.BenfeitorRequestDTO;
-import tech.ada.eCommSolidario.mapper.BenfeitoresMapper;
+import tech.ada.eCommSolidario.mapper.BenfeitorMapper;
 import tech.ada.eCommSolidario.mapper.BenfeitorRequestMapper;
 import tech.ada.eCommSolidario.repository.BenfeitorRepository;
 
@@ -11,10 +11,10 @@ import tech.ada.eCommSolidario.repository.BenfeitorRepository;
 public class CriarBenfeitoresService {
 
     private final BenfeitorRepository benfeitorRepository;
-    private final BenfeitoresMapper benfeitoresMapper;
+    private final BenfeitorMapper benfeitoresMapper;
     private final BenfeitorRequestMapper benfeitorRequestMapper;
 
-    public CriarBenfeitoresService(BenfeitorRepository benfeitorRepository, BenfeitoresMapper benfeitoresMapper,
+    public CriarBenfeitoresService(BenfeitorRepository benfeitorRepository, BenfeitorMapper benfeitoresMapper,
                                    BenfeitorRequestMapper benfeitorRequestMapper) {
         this.benfeitorRepository = benfeitorRepository;
         this.benfeitoresMapper = benfeitoresMapper;
@@ -27,7 +27,7 @@ public class CriarBenfeitoresService {
      * @param benfeitor
      * @return
      */
-    public BenfeitoresDTO executar(BenfeitorRequestDTO benfeitor) {
+    public BenfeitorDTO executar(BenfeitorRequestDTO benfeitor) {
         var entity = benfeitorRequestMapper.toEntity(benfeitor);
             entity = benfeitorRepository.save(entity);
         return benfeitoresMapper.toDto(entity);
